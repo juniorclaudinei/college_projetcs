@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <!--
+            This was an educational project carried out by the HTML & CSS course and the only goal 
+            here is to demonstrate my ability to use HTML & CSS.
+
+            !!!! You are NOT ALLOWED (in any way) to copy or reproduce this code. !!!! 
+            
+            Author: Claudinei Junior
+            Filename: apartment.html
+        -->
+        <title>Sandy and Leslie's Apartment</title>
+        <link href="apartment_layout.css" type="text/css" rel="stylesheet" />
+        <link href="print.css" type="text/css" rel="stylesheet" />
+        <link href="mobile.css" type="text/css" rel="stylesheet" />
+        <style>
+            /* Grid */
+
+            @media only screen and (min-width: 601px) {
+                main {
+                    display: grid;
+                    
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-gap: 5px 20px;
+                    margin: 0 auto;
+                }
+
+                div#survay {
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+
+                div#welcome {
+                    grid-column: 1;
+                    grid-row: 2;                
+                }
+
+                div#service {
+                    grid-column: 2;
+                    grid-row: 1/ span 2;
+                }
+
+                div#location {
+                    grid-column: 3;
+                    grid-row: 1/ span 2; 
+                }
+
+                div#gallery {
+                    grid-column: 1/ span 3;
+                    grid-row: 3;
+                }
+            }
+
+            body h3 {
+                padding: 10px 0px;
+                background-color: rgb(173, 216, 229);
+                color: #31669C;
+                margin: 10px 0px 10px 0px;
+                padding: 7px;
+            }
+
+            /* Form */
+
+            form legend {
+                padding: 0px 0px 10px 0px;
+            }
+
+            form#survey > fieldset {
+                font-size: 0.85em;
+                padding: 0px 0px 10px 0px;
+                margin: 0px;
+                border: 0px;
+            }
+
+            label {
+                padding: 0px 10px 0px 0px;
+            }
+
+            /* Audio */
+            audio {
+                padding: 10px 0px;
+            }
+            
+            div#welcome p {
+                font-size: 0.85em;
+            }
+
+            /* Table */
+            
+            table.schedule {
+                border-collapse: collapse;
+                font-size: 0.75em;
+                width: 100%;
+            }
+
+            table.schedule tbody th, table.schedule tbody td {
+                border: 1px solid black;
+                padding: 5px;
+                text-align: left;
+            }
+
+            table.schedule thead th, table.schedule thead td {
+                background-color: #CFCFCF;
+                border: 1px solid black;
+                padding: 5px;
+                text-align: left;
+            }
+
+            table.schedule tbody tr {
+                height: 35px;
+            }
+
+            table.schedule tfoot td {
+                background-color: rgb(253, 253, 211);
+                border: 1px solid black;
+                height: 20px;
+            }
+
+            col#firstCol {
+                width: 7%;
+            }
+
+            /* Gallery */
+            
+            div#pictures {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: left;
+            }
+
+            div#pictures figure {
+                margin: 20px;
+            }
+
+            div#pictures h4 {
+                padding: 10px 0px;
+                background-color: rgb(169,169,169);
+                color: white;
+                margin: 0px 0px 10px 0px;
+                padding: 7px;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+         <header>
+            <h1>Sandy and Leslie's Apartment</h1>
+            <p>Click on the room for a detailed view.</p>
+
+            <img src="images/apartmentfloorplan.jpg" alt="apartment floor plan" title="Apartment Floor Plan" usemap="#apartment" />
+
+            <map name="apartment">
+                <area shape="rect" coords="54,6,200,165" href="bedroom.html" alt="Bedroom 1" title="Bedroom 1" />
+                <area shape="rect" coords="210,6,350,165" href="bedroom.html" alt="Bedroom 2" title="Bedroom 2" />
+                <area shape="circle" coords="424,140,50" href="diningroom.html" alt="Dining Room" title="Dining Room" />
+                <area shape="rect" coords="255,235,400,400" href="kitchen.html" alt="Kitchen" title="Kitchen" />
+                <area shape="poly" coords="420,400,400,190,470,173,540,173,560,400,420,400" href="livingroom.html" alt="Living Room" title="Living Room" />
+                <area shape="rect" coords="1,1,600,410" href="apartment.html" alt="Apartment Floor Plan" title="Apartment Floor Plan" />
+             </map>
+       
+
+            <nav>
+                <ul>
+                    <li><a href="apartment.html">Apartment</a></li>
+                    <li><a href="bedroom.html" class="leftBorder">Bedroom 1</a></li>
+                    <li><a href="bedroom.html" class="leftBorder">Bedroom 2</a></li>
+                    <li><a href="diningroom.html" class="leftBorder">Dinning Room</a></li>
+                    <li><a href="kitchen.html" class="leftBorder">Kitchen</a></li>
+                    <li><a href="livingroom.html" class="leftBorder">Living Room</a></li>
+                </ul>
+             </nav>
+        </header>
+
+
+        <main>
+            <div id="survay">
+                <h3>Survey</h3>
+                <form id="survey" action="https://csunix.mohawkcollege.ca/tooltime/showit.pl" method="post">
+                    <input type="hidden" name="formname" value="Claudinei dos Santos Junior Apartment Survey" />
+                    <fieldset id="findUs">
+                        <legend>How did you find out about this apartment? Check any that apply:</legend>
+                        
+                        <div>
+                            <input name="howYouFindUs" id="how1" value="Web Search" type="checkbox" />
+                            <label for="how1">Web Search</label>
+                            <input name="howYouFindUs" id="how2" value="Friend" type="checkbox" />
+                            <label for="how2"> Friend</label>
+                            <input name="howYouFindUs" id="how3" value="Newspaper" type="checkbox" />
+                            <label for="how3"> Newspaper</label>
+                        </div>
+                    </fieldset>
+
+                    <div>
+                        <input type="submit" value="Submit" /> 
+                        <input type="reset" value="Reset Form" />
+                    </div>
+                </form>
+
+            </div>
+
+            <div id="welcome">
+                <h3>Welcome Message</h3>
+
+                <audio controls>
+                    <source src="audio/apartment.mp3" type="audio/mp3" />
+                </audio>
+                <p>
+                    Transcript: Hello. Welcome to our apartment. You'll really enjoy living here. The rooms are spacious and the
+                    apartment building amenities are fantastic. We look forward to hearing from you!
+                </p>
+            </div>
+
+            <div id="service">
+                <h3>Apartment services:</h3>
+                <table class="schedule" title="Apartment Services Table">
+    
+                    <colgroup>
+                    <col id="firstCol" />
+                    <col class="headCol">
+                    </colgroup>
+                    
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Day/Hours</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr>
+                            <th>Gym</th>
+                            <td rowspan="2">
+                                Monday - Friday 6am - 10pm <br />
+                                Saturday 8am - 8pm <br />
+                                Sunday 8am - 5pm
+                            </td>                
+                        </tr>
+    
+                        <tr>
+                            <th>Pool</th>
+                        </tr>
+        
+                        <tr>
+                            <th>Laundry</th>
+                            <td>24x7</td> 
+                        </tr>
+   
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                           <td colspan="2" > Please do not allow people you do not know to use these facilities.</td>
+                        </tr>
+                     </tfoot>
+                </table>
+            </div>
+
+            <div id="location">
+                <h3>Location</h3>
+                <figure>
+                    <img src="images/location.png" alt="location" title="Location" />
+                </figure>
+            </div>
+
+            <div id="gallery">
+                <h3>Gallery</h3>
+
+                <div id="pictures">
+                    <figure>
+                        <h4>Balcony</h4>
+                        <img src="images/thumbnails/balcony_sm.jpg" alt="Balcony" title="Balcony" />
+                    </figure>
+
+                    <figure>
+                        <h4>Bathroom</h4>
+                        <img src="images/thumbnails/bathroom_sm.jpg" alt="Bathroom" title="Bathroom" />
+                    </figure>
+
+                    <figure>
+                        <h4>Bedroom</h4>
+                        <img src="images/thumbnails/bedroom_sm.jpg" alt="Bedroom" title="Bedroom" />
+                    </figure>
+
+                    <figure>
+                        <h4>Dining Room</h4>
+                        <img src="images/thumbnails/diningroom_sm.jpg" alt="Dining Room" title="Dining Room" />
+                    </figure>
+
+                    <figure>
+                        <h4>Kitchen</h4>
+                        <img src="images/thumbnails/kitchen_sm.jpg" alt="Kitchen" title="Kitchen" />
+                    </figure>
+
+                    <figure>
+                        <h4>Living Room</h4>
+                        <img src="images/thumbnails/livingroom_sm.jpg" alt="Living Room" title="Living Room" />
+                    </figure>
+                </div>  
+            </div>
+            
+        </main>
+
+        <footer>
+            <p>For more information contact: <a href="mailto:apartment@example.com">apartment@example.com</a></p>
+            <p>&copy; Sandy and Leslie 2020</p>
+        </footer>
+    </body>
+</html>

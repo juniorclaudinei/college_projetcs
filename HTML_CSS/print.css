@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/*
+    This was an educational project carried out by the HTML & CSS course and the only goal 
+    here is to demonstrate my ability to use HTML & CSS.
+    
+    !!!! You are NOT ALLOWED (in any way) to copy or reproduce this code. !!!! 
+
+    Author: Claudinei Junior
+    Filename: print.css
+*/
+
+
+@media only print {
+    body header img, body header p {
+        display: none;
+     }
+}
+
+
+

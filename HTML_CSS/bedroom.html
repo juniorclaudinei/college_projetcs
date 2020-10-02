@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <!--
+            This was an educational project carried out by the HTML & CSS course and the only goal 
+            here is to demonstrate my ability to use HTML & CSS.
+            
+            !!!! You are NOT ALLOWED (in any way) to copy or reproduce this code. !!!! 
+
+            Author: Claudinei Junior
+            Filename: bedroom.html
+        -->
+        <title>Sandy and Leslie's Apartment</title>
+        <link href="apartment_layout.css" type="text/css" rel="stylesheet" />
+        <link href="print.css" type="text/css" rel="stylesheet" />
+        <link href="mobile.css" type="text/css" rel="stylesheet" />
+        <style>
+            body h3 {
+                padding: 10px 0px;
+                background-color: rgb(173, 216, 229);
+                color: #31669C;
+                margin: 0px 0px 10px 0px;
+                padding: 7px;
+            }
+
+            body h3.left {
+                text-align: left;
+            }
+
+            div#detail {
+                text-align: center;
+                width: auto;
+                padding: 5px 0px 5px 12px;
+            }
+
+            /* Table */
+
+            table.schedule {
+                border-collapse: collapse;
+                font-size: 0.75em;
+                width: 450px;
+                margin: 10px 0px;
+            }
+
+            table.schedule tbody th, table.schedule tbody td {
+                border: 1px solid black;
+                padding: 5px;
+                text-align: left;
+            }
+
+            table.schedule thead th, table.schedule thead td {
+                background-color: #CFCFCF;
+                border: 1px solid black;
+                padding: 5px;
+                text-align: left;
+            }
+
+            table.schedule tbody tr {
+                height: 35px;
+            }
+
+            table.schedule tfoot td {
+                background-color: rgb(253, 253, 211);
+                border: 1px solid black;
+                height: 20px;
+            }
+
+            col#firstCol {
+                width: 7%;
+            }
+
+            footer {
+                text-align: left;
+                font-size: 0.85em;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+         <header>
+            <h1>Sandy and Leslie's Apartment</h1>
+            <p>Click on the room for a detailed view.</p>
+
+            <img src="images/apartmentfloorplan.jpg" alt="apartment floor plan" title="Apartment Floor Plan" usemap="#apartment" />
+
+            <map name="apartment">
+                <area shape="rect" coords="54,6,200,165" href="bedroom.html" alt="Bedroom 1" title="Bedroom 1" />
+                <area shape="rect" coords="210,6,350,165" href="bedroom.html" alt="Bedroom 2" title="Bedroom 2" />
+                <area shape="circle" coords="424,140,50" href="diningroom.html" alt="Dining Room" title="Dining Room" />
+                <area shape="rect" coords="255,235,400,400" href="kitchen.html" alt="Kitchen" title="Kitchen" />
+                <area shape="poly" coords="420,400,400,190,470,173,540,173,560,400,420,400" href="livingroom.html" alt="Living Room" title="Living Room" />
+                <area shape="rect" coords="1,1,600,410" href="apartment.html" alt="Apartment Floor Plan" title="Apartment Floor Plan" />
+             </map>
+       
+
+            <nav>
+                <ul>
+                    <li><a href="apartment.html">Apartment</a></li>
+                    <li><a href="bedroom.html" class="leftBorder">Bedroom 1</a></li>
+                    <li><a href="bedroom.html" class="leftBorder">Bedroom 2</a></li>
+                    <li><a href="diningroom.html" class="leftBorder">Dinning Room</a></li>
+                    <li><a href="kitchen.html" class="leftBorder">Kitchen</a></li>
+                    <li><a href="livingroom.html" class="leftBorder">Living Room</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <main>
+            <div id="detail">
+                <h3>Bedroom Detail</h3>
+
+                <img src="images/bedroom_lg.jpg" alt="Bedroom" title="Bedroom" />
+            </div>
+
+
+            <div id="service">
+                <h3 class="left">Apartment services:</h3>
+                <table class="schedule" title="Apartment Services Table">
+    
+                    <colgroup>
+                    <col id="firstCol" />
+                    <col class="headCol"/>
+                    </colgroup>
+                    
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Day/Hours</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr>
+                            <th>Gym</th>
+                            <td rowspan="2">
+                                Monday - Friday 6am - 10pm <br />
+                                Saturday 8am - 8pm <br />
+                                Sunday 8am - 5pm
+                            </td>                
+                        </tr>
+    
+                        <tr>
+                            <th>Pool</th>
+                        </tr>
+        
+                        <tr>
+                            <th>Laundry</th>
+                            <td>24x7</td> 
+                        </tr>
+   
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                           <td colspan="2" > Please do not allow people you do not know to use these facilities.</td>
+                        </tr>
+                     </tfoot>
+                </table>
+            </div>
+            
+        </main>
+
+        <footer>
+            <p>For more information contact: <a href="mailto:apartment@example.com">apartment@example.com</a></p>
+            <p>&copy; Sandy and Leslie 2020</p>
+        </footer>
+    </body>
+</html>

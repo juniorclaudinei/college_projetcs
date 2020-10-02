@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/*
+    This was an educational project carried out by the HTML & CSS course and the only goal 
+    here is to demonstrate my ability to use HTML & CSS.
+    
+    !!!! You are NOT ALLOWED (in any way) to copy or reproduce this code. !!!!
+    
+    Author: Claudinei Junior
+    Filename: mobile.css
+*/
+
+@media only screen and (max-width: 600px) {
+    main {
+        display: block;
+    }
+
+    body header img, body header p {
+        display: none;
+     }
+
+     body nav {
+        position: sticky;
+        top: 0px;
+        text-align: center;
+        width: auto;
+        padding: 0px 0px 10px 0px;
+    }
+        
+    body nav::after{
+        clear: both;
+        content: "";
+        display: table;
+    }
+    
+    body nav li{
+        display: block;
+        font-size: 0.75em;
+        padding: 5px 0px;
+    }
+            
+    body nav a {
+        color: #31669C;
+        text-decoration: underline;
+    }
+
+    body nav a.leftBorder {
+        border-left: 0px;
+    }
+}
